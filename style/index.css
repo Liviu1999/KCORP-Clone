@@ -10,11 +10,52 @@
     width: 100vw;
     height: 20vh;
     display: flex;
-    gap: 100px;
     justify-content: space-between;
     align-items: center;
-    background-color: #64CCC5;
+    background-color: #053B50;
     border-bottom: solid #EEEEEE;
+}
+
+ul {
+    list-style: none;
+    width: 100%;
+}
+
+ul li {
+    display: inline-block;
+    position: relative;
+    margin: auto 8px;
+}
+
+ul li ul.dropdown li{
+    display: block;
+}
+
+ul li ul.dropdown{
+    width: 100%;
+    position: absolute;
+    z-index: 999;
+    display: none;
+    animation: colorChange 2s ;
+    
+}
+
+ul li a:hover{
+    text-decoration: overline;
+    animation: colorChange 2s ;
+}
+
+@keyframes colorChange {
+    0%{
+        
+    }
+    100%{
+        color: #EEEEEE;
+    }
+}
+
+ul li:hover ul.dropdown{
+    display: block;
 }
 
 .navbar{
@@ -29,7 +70,7 @@
     font-size: 1.4em;
     font-weight: 900;
     text-decoration: none;
-    color: #053B50;
+    color: #64CCC5;
 }
 
 @media (max-width: 1015px) {
