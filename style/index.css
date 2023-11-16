@@ -5,6 +5,15 @@
     font-family: 'Roboto', sans-serif;
 }
 
+body{
+    background-color: #040D12;
+    width: calc(100vw - 17px);
+}
+
+::-webkit-scrollbar{
+    display: none;
+}
+
 /* Header */
 .header{
     width: 100vw;
@@ -12,13 +21,12 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #787A91;
+    background-color: #040D12;
     border-bottom: solid #EEEEEE;
     position: fixed;
+    top: 0;
+    z-index: 999;
 }
-
-
-
 
 ul {
     list-style: none;
@@ -38,7 +46,7 @@ ul li ul.dropdown li{
 ul li ul.dropdown{
     width: 160px;
     color: #EEEEEE;
-    background-color: #787A91;
+    background-color: #001C30;
     border-radius: 5px;
     border: solid #EEEEEE;
     position: absolute;
@@ -51,19 +59,14 @@ ul li ul.dropdown{
     padding: 5px 3px;
 }
 
-.dropdown li:hover{
-    color: #141E61;
-    font-weight: 900;
-    border-bottom: solid #141E61;
-}
-
-ul li a:hover{
+.navbar ul li a:hover{
     text-decoration: overline;
-    color: #141E61;
+    color: #787A91;
 }
 
-ul li .dropdown li a{
+ul li .dropdown li:hover a{
     text-decoration: none;
+    color: #787A91;
 }
 
 ul li:hover ul.dropdown{
@@ -82,11 +85,10 @@ ul li:hover ul.dropdown{
 }
 
 .menu img{
-    border: solid #EEEEEE;
+    border: solid #787A91;
     border-radius: 30%;
     width: 40px;
     background-color: #EEEEEE;
-    border:solid #141E61;
     cursor: pointer;
 }
 
@@ -117,7 +119,7 @@ ul li:hover ul.dropdown{
     
     .navbarVert ul {
         list-style: none;
-        background: #0F044C;
+        background: #141E61;
     }
     
     .navbarVert ul li {
@@ -145,7 +147,7 @@ ul li:hover ul.dropdown{
     
     .navbarVert ul li ul.dropdown {
         width: 100%;
-        background: #787A91;
+        background: #141E61;
         position: absolute;
         z-index: 999;
         display: none;
@@ -153,7 +155,7 @@ ul li:hover ul.dropdown{
     }
     
     .navbarVert ul li a:hover {
-        background: #141E61;
+        background: #787A91;
         border-radius: 30px;
         text-decoration: none;
     }
@@ -173,12 +175,12 @@ ul li:hover ul.dropdown{
 .logo img{
     width: 60px;
     padding: 5px;
-    border: solid #EEEEEE;
+    border: solid #787A91;
     border-radius: 30%;
     overflow: visible;
     background-color: #EEEEEE;
-    border:solid #141E61;
 }
+
 
 .social-media{
     display: flex;
@@ -193,11 +195,15 @@ ul li:hover ul.dropdown{
 .social-media a img{
     width: 40px;
     padding: 2px;
-    border: solid #EEEEEE;
+    border: solid #787A91;
     border-radius: 30%;
     overflow: visible;
     background-color: #EEEEEE;
-    border:solid #141E61;
+}
+
+.social-media a img:hover{
+    transition: margin .2s;
+    margin: 15px auto auto auto;
 }
 
 .shop{
@@ -210,11 +216,337 @@ ul li:hover ul.dropdown{
     width: 40px;
     margin-right: 5px;
     padding: 5px;
-    border: solid #EEEEEE;
+    border: solid #787A91;
     border-radius: 30%;
     overflow: visible;
     background-color: #EEEEEE;
-    border:solid #141E61;
 }
 
+.shop img:hover{
+    transition: margin-bottom .2s;
+    margin-top: 15px;
+}
 
+/* Main*/
+/* Container Affiche */
+
+main{
+    width: 100%;
+}
+
+.container-affiche{
+    width: auto;
+    height: 1000px;
+    border-bottom: solid #EEEEEE;
+    display: flex;
+}
+
+.affiche-main {
+    width: 50vw;
+    height: 100vh;
+    border: solid #787A91;
+    border-radius: 30px;
+    margin: auto auto;
+}
+
+.affiche-second{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    margin: auto auto;
+    width: 30vw;
+    height: 100vh;
+    overflow-x: auto;
+}
+
+.produit{
+    width: 100%;
+    height: 45%;
+    position: relative;
+    border: solid #787A91;
+    border-radius: 30px;
+}
+.produit img:hover{
+    transition: transform .8s;
+    transform: scale(1.2) ;
+    cursor: pointer;
+    border-radius: 30px;
+}
+
+.produit-carac{
+    position: absolute;
+    bottom: 5px;
+}
+
+.produit img {
+	width: 100%;
+    height: 100%;
+	object-fit: cover;
+    border-radius: 30px;    
+}
+
+.slider-wrapper {
+	position: relative;
+    height: 100%;
+    border-radius: inherit;
+}
+
+.slider {
+    height: 100%;
+    width: 100%;
+    border-radius: inherit;
+	display: flex;
+	aspect-ratio: 16 / 9;
+	overflow-x: auto;
+	scroll-snap-type: x mandatory;
+	scroll-behavior: smooth;
+	-ms-overflow-style: none; /* Hide scrollbar IE and Edge */
+	scrollbar-width: none; /* Hide scrollbar Firefox */
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.slider::-webkit-scrollbar {
+	display: none;
+}
+
+.slider img {
+	flex: 1 0 100%;
+	scroll-snap-align: start;
+	object-fit: cover;
+}
+
+.slider img:hover{
+    transition: transform .8s;
+    transform: scale(1.2) ;
+    cursor: pointer;
+}
+
+.slider-nav {
+	display: flex;
+	column-gap: 1rem;
+	position: absolute;
+	bottom: 1.25rem;
+	left: 50%;
+	transform: translateX(-50%);
+	z-index: 1;
+}
+
+.slider-nav a {
+	width: 0.5rem;
+	height: 0.5rem;
+	border-radius: 50%;
+	background-color: #fff;
+	opacity: 0.75;
+	transition: opacity ease 250ms;
+}
+
+.slider-nav a:hover {
+	opacity: 1;
+    transform: scale(2);
+    background-color: #040D12;
+}
+
+.container-sponsors{
+    width: 100vw;
+    height: 40vh;
+    border-bottom: solid #EEEEEE;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.container-sponsors img{
+    width: 100px;
+    height: 100px;
+}
+
+.container-sponsors img:nth-child(2){
+    width: 150px;
+    height: 90px;
+}
+
+.container-sponsors img:nth-child(4){
+    width: 150px;
+    height: 90px;
+}
+
+.container-sponsors img:nth-child(5){
+    width: 150px;
+    height: 90px;
+}
+
+.container-sponsors img:nth-child(6){
+    width: 50px;
+    height: 100px;
+}
+
+.container-more{
+    display: flex;
+    flex-wrap: no-wrap;
+    height: 70vh;
+    border-bottom: solid #EEEEEE;
+    padding: 5px 20%;
+    width: 100vw;
+}
+
+.more-text{
+    width: 100%;
+    height: 100%;
+    color: #EEEEEE;
+}
+
+.more-text h1{
+    font-size: 3em;
+    margin-bottom: 5px;
+}
+
+.more-text p:nth-child(1) {
+    color: #787A91;
+}
+
+.more-text button{
+    border: solid #EEEEEE;
+    border-radius: 30px;
+    margin-top: 5px;
+    height: 50px;
+    width: 150px;
+    background: none;
+    color: #EEEEEE;
+    
+}
+
+.more-text button:hover{
+    background-color: #EEEEEE;
+    color: #040D12;
+    cursor: pointer;
+    transition: color 2s;
+}
+
+.more-img{
+    width: 100%;
+    height: 100%;
+    background-image: url(../images/home.png);
+    background-position: center;
+}
+
+/* FOOTER */
+
+footer > h1, h2{
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    font-size: 2rem;
+    color: #EEEEEE
+}
+
+footer h1{
+    color: #787A91;
+    font-size: .9rem;
+}
+
+.container-affiche-insta{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    height: 300px;
+    width: 100vw;
+    overflow: hidden;
+}
+
+.container-affiche-insta a{
+    width: 20%;
+    height: 100%;
+    transition: transform 1s;
+}
+
+.container-affiche-insta a img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.container-affiche-insta a:hover{
+    transform: scale(1.2);
+}
+
+.container-footer{
+    display: grid;
+    width: 100vw;
+    height: 40vh;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.container-footer-social{
+    grid-area: 0 0 1 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-footer-social .logo:hover{
+    margin-bottom: 10px;
+}
+
+.social-media{
+    display: flex;
+    justify-content: center;
+    align-content: space-between;
+}
+
+.container-footer-karmine{
+    grid-area: 0 1 1 2;
+}
+
+.container-footer-karmine .footer-type{
+    display: flex;
+    height: 60%;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10%;
+}
+
+.footer-type li:nth-child(1) {
+    color: #787A91;
+    font-size: 1.3rem;
+}
+
+.footer-type li a{
+    text-decoration: none;
+    color: #EEEEEE;
+}
+
+.container-footer-esport{
+    grid-area: 0 2 1 3;
+}
+
+.container-footer-esport .footer-type{
+    display: flex;
+    height: 60%;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10%;
+}
+
+.container-footer-legal{
+    grid-area: 0 2 1 3;
+}
+
+.container-footer-legal .footer-type{
+    display: flex;
+    height: 60%;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10%;
+}
+
+.container-footer-legal .footer-type li:nth-child(5) {
+    color: #787A91;
+}
+
+.container-footer li:hover a{
+    color: #787A91;
+}
