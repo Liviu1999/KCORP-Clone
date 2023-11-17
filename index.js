@@ -13,6 +13,7 @@ menu.addEventListener("click", () => {
   }
 });
 
+// main slider carrousel
 const prevBut = document.querySelector("#prev-but-hor");
 const nextBut = document.querySelector("#next-but-hor");
 const tabImages = [];
@@ -27,7 +28,6 @@ let firstImg = document.querySelector("#first-image");
 
 let index = 6;
 prevBut.addEventListener("click", () => {
-  console.log("hey");
   if (index == 0) {
     index = 6;
   }
@@ -36,10 +36,37 @@ prevBut.addEventListener("click", () => {
 });
 
 nextBut.addEventListener("click", () => {
-  console.log("hey1");
   if (index == 6) {
     index = 0;
   }
   index++;
   firstImg.src = `${tabImages[index]}`;
+});
+
+//sliderLeft show in middle
+const sliderLeft = document.querySelectorAll(".ima");
+
+sliderLeft.forEach((element) => {
+  element.addEventListener("click", (e) => {
+    const img = e.target.src;
+    firstImg.src = img;
+  });
+});
+
+const nextBu = document.querySelector("#next-but");
+const prevBu = document.querySelector("#prev-but");
+const sliderF = document.querySelector(".slider-description-img");
+
+prevBu.addEventListener("click", () => {
+  sliderF.scroll({
+    top: -500,
+    behavior: "smooth",
+  });
+});
+
+nextBu.addEventListener("click", () => {
+  sliderF.scroll({
+    top: 500,
+    behavior: "smooth",
+  });
 });

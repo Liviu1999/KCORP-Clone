@@ -29,6 +29,12 @@ main{
     position: relative;
 }
 
+.slider-description-img{
+    height: 100%;
+    overflow: hidden;
+    gap: 5px;
+}
+
 .slider-description #prev-but{
     position: absolute;
     top: 1%;
