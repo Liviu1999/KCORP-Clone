@@ -56,17 +56,60 @@ sliderLeft.forEach((element) => {
 const nextBu = document.querySelector("#next-but");
 const prevBu = document.querySelector("#prev-but");
 const sliderF = document.querySelector(".slider-description-img");
+let nextBis = true;
+let prevBis = false;
 
 prevBu.addEventListener("click", () => {
-  sliderF.scroll({
-    top: -500,
-    behavior: "smooth",
-  });
+  if (prevBis) {
+    sliderF.scroll({
+      top: -500,
+      behavior: "smooth",
+    });
+    prevBis = false;
+    nextBis = true;
+  } else {
+    sliderF.scroll({
+      top: 500,
+      behavior: "smooth",
+    });
+    prevBis = true;
+    nextBis = false;
+  }
 });
 
 nextBu.addEventListener("click", () => {
-  sliderF.scroll({
-    top: 500,
-    behavior: "smooth",
-  });
+  if (nextBis) {
+    sliderF.scroll({
+      top: 500,
+      behavior: "smooth",
+    });
+    nextBis = false;
+    prevBis = true;
+  } else {
+    sliderF.scroll({
+      top: -500,
+      behavior: "smooth",
+    });
+    nextBis = true;
+    prevBis = false;
+  }
+});
+
+//zoom on main slider
+
+const contImg = document.querySelector(".container-images-description");
+
+contImg.addEventListener("mousemove", (event) => {
+  const clientX = event.clientX - event.target.offsetLeft;
+  const clientY = event.clientY - event.target.offsetTop;
+
+  firstImg.style.transformOrigin = `${clientX - 160}px ${clientY - 50}px`;
+  firstImg.style.transform = `scale(1.5)`;
+  //firstImg.style.overflow = "visible";
+});
+
+contImg.addEventListener("mouseleave", () => {
+  firstImg.style.transformOrigin = `center`;
+  firstImg.style.transform = `scale(1)`;
+  prevBut.style.zIndex = "99";
 });

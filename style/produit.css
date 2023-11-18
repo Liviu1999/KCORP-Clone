@@ -74,8 +74,8 @@ main{
 }
 
 .container-images-description{
-    width: 100%;
-    height: 100%;
+    width: 488px;
+    height: 858px;
     grid-area: 0 1 1 2;
     display: flex;
     position: relative;
@@ -89,6 +89,8 @@ main{
     width: 100%;
     height: 100%;
     object-fit: cover;
+    transform-origin: center;
+    
 }
 
 .container-images-description #next-but-hor{
