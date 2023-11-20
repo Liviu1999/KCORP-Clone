@@ -103,7 +103,7 @@ contImg.addEventListener("mousemove", (event) => {
   const clientX = event.clientX - event.target.offsetLeft;
   const clientY = event.clientY - event.target.offsetTop;
 
-  firstImg.style.transformOrigin = `${clientX - 160}px ${clientY - 50}px`;
+  firstImg.style.transformOrigin = `${clientX - 210}px ${clientY + 200}px`;
   firstImg.style.transform = `scale(1.5)`;
   //firstImg.style.overflow = "visible";
 });
@@ -112,4 +112,74 @@ contImg.addEventListener("mouseleave", () => {
   firstImg.style.transformOrigin = `center`;
   firstImg.style.transform = `scale(1)`;
   prevBut.style.zIndex = "99";
+});
+
+// incrementation-decrementation
+
+const plus = document.querySelector("#positif");
+const moins = document.querySelector("#negatif");
+const nbr = document.querySelector(".nbr");
+
+plus.addEventListener("click", () => {
+  let nombre = nbr.textContent;
+  nombre++;
+  nbr.textContent = nombre;
+  if (nombre > 3) {
+    nbr.textContent = 3;
+  }
+});
+
+moins.addEventListener("click", () => {
+  let nombre = nbr.textContent;
+  nombre--;
+  nbr.textContent = nombre;
+  if (nombre < 1) {
+    nbr.textContent = 1;
+  }
+});
+
+// payment with Stripe (need to GET when click the button)
+const title = document.querySelector("#title").textContent;
+const price = document.querySelector("#price").textContent;
+const size = document.querySelectorAll("input");
+let input = undefined;
+const product_data = [];
+const a = size.forEach(async (e) => {
+  if (e.checked == true) {
+    input = await e.nextSibling.nextSibling.textContent;
+    product_data.push({
+      name: title,
+      price: price,
+      size: input,
+      quantity: nbr.textContent,
+    });
+  }
+  console.log(product_data);
+});
+
+const payBut = document.querySelector("#buy");
+
+payBut.addEventListener("click", () => {
+  fetch("http://localhost:3000/create-checkout-session", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      items: [
+        { id: 1, quantity: 3 },
+        { id: 2, quantity: 1 },
+      ],
+    }),
+  })
+    .then((res) => {
+      if (res.ok) return res.json();
+      return res.json().then((json) => Promise.reject(json));
+    })
+    .then(({ url }) => {
+      window.location = url;
+    })
+    .catch((e) => {
+      console.error(e.error);
+    });
 });

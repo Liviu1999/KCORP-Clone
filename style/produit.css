@@ -90,7 +90,7 @@ main{
     height: 100%;
     object-fit: cover;
     transform-origin: center;
-    
+    cursor: zoom-in;
 }
 
 .container-images-description #next-but-hor{
@@ -171,10 +171,31 @@ h1, h3{
     gap: 5px;
 }
 
+.size-block label{
+    cursor: pointer;
+}
+
+.size-block label:hover{
+    border: solid white 1px;
+}
+
+.size-block label:hover input:disabled{
+    border: solid #787A91 1px;
+}
+
 .container-size label{
     border: solid #787A91 1px;
     height: 40px;
     width: 40px;
+}
+
+.container-size label:first-child{
+    border: solid #00b4d8 1px;
+}
+
+.container-size label input:disabled + span{
+    color: #787A91;
+    cursor: auto;
 }
 
 .container-size label span{
@@ -200,6 +221,7 @@ h1, h3{
     color: white;
     width: 50px;
     height: 50px;
+    cursor: pointer;
 }
 
 .nbr{
@@ -217,4 +239,10 @@ h1, h3{
     width: 100%;
     height: 60px;
     font-size: 1.3rem;
+    transition: color .7s;
+}
+
+#buy:hover{
+    color:white;
+    cursor: pointer;
 }
