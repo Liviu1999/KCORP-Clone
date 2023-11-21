@@ -138,6 +138,27 @@ moins.addEventListener("click", () => {
   }
 });
 
+// Size change
+
+const allInputs = document.querySelectorAll("input");
+const allLabel = document.querySelectorAll("label");
+
+/*if (e.hasAttribute("checked")) {
+  e.removeAttribute("checked");
+}*/
+
+allInputs.forEach((e) => {
+  e.addEventListener("click", () => {
+    if (e.checked) {
+      allInputs.forEach((i) => {
+        i.parentElement.style.border = "solid #787A91 1px";
+      });
+      e.parentElement.style.border = "solid #00b4d8 1px";
+      console.log("hey1");
+    }
+  });
+});
+
 // payment with Stripe (need to GET when click the button)
 const title = document.querySelector("#title").textContent;
 const price = document.querySelector("#price").textContent;
@@ -154,8 +175,8 @@ const a = size.forEach(async (e) => {
       quantity: nbr.textContent,
     });
   }
-  console.log(product_data);
 });
+console.log(product_data);
 
 const payBut = document.querySelector("#buy");
 
@@ -167,8 +188,8 @@ payBut.addEventListener("click", () => {
     },
     body: JSON.stringify({
       items: [
-        { id: 1, quantity: 3 },
-        { id: 2, quantity: 1 },
+        { id: 1, quantity: product_data.quantity },
+        { id: 2, quantity: product_data.quantity },
       ],
     }),
   })
