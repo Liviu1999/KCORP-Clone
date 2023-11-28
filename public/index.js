@@ -1,3 +1,4 @@
+// Navbar responsive designe
 const menu = document.querySelector(".menu");
 const navbar = document.querySelector(".navbar");
 const navbarVert = document.querySelector(".navbarVert");
@@ -12,6 +13,10 @@ menu.addEventListener("click", () => {
     t = true;
   }
 });
+
+// allProduits reach to the id product
+
+const containerList = document.querySelector(".container-list");
 
 // main slider carrousel
 const prevBut = document.querySelector("#prev-but-hor");
@@ -164,18 +169,10 @@ let title = document.querySelector("#title").textContent;
 let price = document.querySelector("#price").textContent;
 let size = document.querySelectorAll("input");
 let input = undefined;
-const productData = [
-  {
-    id: 0,
-    name: "title",
-    price: 50,
-    size: "S",
-    quantity: 13,
-  },
-];
+const productData = [];
 
 const payBut = document.querySelector("#buy");
-let id = 1;
+let id = 0;
 
 payBut.addEventListener("click", async () => {
   console.log(productData);

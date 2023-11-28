@@ -58,15 +58,9 @@ app.use(
 
 const stripe = require("stripe")(process.env.STRIPE_PRIVATE_KEY);
 
-const storeItems = new Map([
-  [10, { priceInCents: 10000, name: "Item 1" }],
-  [11, { priceInCents: 20000, name: "Item 2" }],
-]);
-
 app.post("/create-checkout-session", async (req, res) => {
   try {
     console.log(req.body.productData);
-    console.log(storeItems);
     const session = await stripe.checkout.sessions.create({
       payment_method_types: ["card"],
       mode: "payment",
@@ -74,17 +68,17 @@ app.post("/create-checkout-session", async (req, res) => {
         const storeItem = item.id;
         return {
           price_data: {
-            currency: "usd",
+            currency: "eur",
             product_data: {
               name: item.name,
             },
-            unit_amount: item.price,
+            unit_amount: item.price * 100,
           },
           quantity: item.quantity,
         };
         storeItem++;
       }),
-      success_url: `${process.env.CLIENT_URL}/allProduits.html`,
+      success_url: `${process.env.CLIENT_URL}/allProduits`,
       cancel_url: `${process.env.CLIENT_URL}/index.html`,
     });
     res.json({ url: session.url });

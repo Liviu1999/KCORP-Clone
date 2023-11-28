@@ -69,7 +69,7 @@
                 <% products.product.forEach(element => {%>
                     <div class="container-list-produits" data-element-id="<%= element.id %>">
                         <div class="produits-image">
-                            <a href="./produit.html"><img src="/images/produits/allProducts/<%=element.imgName %>" alt=""></a>
+                            <a href="./produit/<%= element.id-1 %> "><img src="/images/produits/allProducts/<%=element.imgName %>" alt=""></a>
                         </div>
                         <div class="produits-image-description">
                             <p><%= element.name %></p>
