@@ -1,0 +1,116 @@
+{
+    "product":  [
+        {
+            "id":1,
+            "name": "Calendrier de l'Avent Karmine",
+            "price":  12,
+            "imgName": "DSC07530.webp"
+        },
+        {
+            "id":2,
+            "name": "Calendrier de l'Avent Karmine",
+            "price":  12,
+            "imgName": "DSC07600.webp"
+        },{
+            "id":3,
+            "name": "Calendrier de l'Avent Karmine",
+            "price":  12,
+            "imgName": "DSC07798.webp"
+        },{
+            "id":4,
+            "name": "Calendrier de l'Avent Karmine",
+            "price":  12,
+            "imgName": "DSC07941.webp"
+        },{
+            "id":5,
+            "name": "Calendrier de l'Avent Karmine",
+            "price":  12,
+            "imgName": "DSC08060.webp"
+        },{
+            "id":6,
+            "name": "Calendrier de l'Avent Karmine",
+            "price":  12,
+            "imgName": "DSC08210.webp"
+        },{
+            "id":7,
+            "name": "Calendrier de l'Avent Karmine",
+            "price":  12,
+            "imgName": "DSC08421.webp"
+        },{
+            "id":8,
+            "name": "Calendrier de l'Avent Karmine",
+            "price":  12,
+            "imgName": "DSC08805_a61e7ba4-d3e2-456e-8f27-4a888e088a77.webp"
+        },{
+            "id":9,
+            "name": "Calendrier de l'Avent Karmine",
+            "price":  12,
+            "imgName": "DSC08935.webp"
+        },{
+            "id":10,
+            "name": "Calendrier de l'Avent Karmine",
+            "price":  12,
+            "imgName": "Jersey26.webp"
+        }
+    ], 
+    "productId": [
+        {
+            "id": 1,
+            "imgs": [
+                {
+                    "imgName": "7.webp"
+                },{
+                    "imgName":"8.webp"
+                },{
+                    "imgName":"9.webp"
+                },{
+                    "imgName":"10.webp"
+                },{
+                    "imgName":"11.webp"
+                },{
+                    "imgName":"12.webp"
+                }
+            ], 
+            "title": "T-Shirt MONOGRAM BEIGE",
+            "stock": true,
+            "description": "Ta jacket préférée pour passer l'automne sous l'effigie Karmine Corp avec style. Son design monogram en twill et satin ainsi que son logo brodé font d'elle le plus gros banger de cette collection. Fabriquée au Pakistan.",
+            "price": 85,
+            "XS": true, 
+            "S": true ,
+            "M": true ,
+            "L": true ,
+            "XL": true,
+            "XLL": true,
+            "XLLL": false    
+        },
+        {
+            "id": 2,
+            "imgs": [{"imgName": "0.webp"},
+                {
+                    "imgName":"1.webp"
+                },{
+                    "imgName":"2.webp"
+                },{
+                    "imgName":"3.webp"
+                },{
+                    "imgName":"4.webp"
+                },{
+                    "imgName":"5.webp"
+                },{
+                    "imgName":"6.webp"
+                }
+            ], 
+            "title": "COACH JACKET MONOGRAM BEIGE",
+            "stock": true,
+            "description": "Ta jacket préférée pour passer l'automne sous l'effigie Karmine Corp avec style. Son design monogram en twill et satin ainsi que son logo brodé font d'elle le plus gros banger de cette collection. Fabriquée au Pakistan.",
+            "price": 85,
+            "XS": true, 
+            "S": true ,
+            "M": true ,
+            "L": true ,
+            "XL": true,
+            "XLL": true,
+            "XLLL": false    
+        }
+    ]
+}
